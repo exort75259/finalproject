@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Измените на нужную ветку, если требуется
+      - main  # Измените на ту ветку, с которой работаете
 
 jobs:
   build-and-push:
@@ -26,5 +26,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: docker/Dockerfile
           push: true
           tags: exort33/finalproject:tagname
